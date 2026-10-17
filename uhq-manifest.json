@@ -1,6 +1,6 @@
 {
   "name": "Promo Codes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Codes promo personnalisables : codes cadeau crédités sur le solde Wallet, bonus de recharge et réductions pour la boutique Orders, avec conditions complètes.",
   "icon": "Ticket",
   "author": {
@@ -37,7 +37,15 @@
       "adminOnly": true
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "zone": "topbar",
+      "label": "addon.promo.nav",
+      "icon": "Ticket",
+      "page": "/",
+      "adminOnly": false
+    }
+  ],
   "widgets": [],
   "auth": {
     "passJwt": true,
