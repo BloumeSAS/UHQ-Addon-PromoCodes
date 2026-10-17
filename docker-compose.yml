@@ -1,0 +1,30 @@
+# ─── Développement local ──────────────────────────────────────────────────────
+# Lance l'addon promocodes précompilé (après npm run build dans api/ et web/)
+# Pour le hot-reload, préférer :
+#   cd api && npm run start:dev  (NestJS :3105)
+#   cd web && npm run dev        (Vite :5175)
+
+services:
+  promocodes:
+    build: .
+    container_name: uhq-addon-promocodes
+    restart: unless-stopped
+    ports:
+      - "3105:3105"
+    environment:
+      PORT:          3105
+      PANEL_URL:     http://host.docker.internal:8000
+      DB_PATH:       /app/data/promocodes-data.json
+      NODE_ENV:      production
+      # PANEL_API_KEY: votre-clé-api-panel
+    volumes:
+      - promocodes_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3105/uhq-manifest.json"]
+      interval: 30s
+      timeout:  5s
+      retries:  3
+
+volumes:
+  promocodes_data:
+    driver: local

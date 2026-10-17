@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+api/node_modules/
+web/node_modules/
+
+# Build outputs
+api/dist/
+web/dist/
+
+# Local runtime data
+promocodes-data.json
+api/promocodes-data.json
+
+# Env config
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db

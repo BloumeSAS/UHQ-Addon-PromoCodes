@@ -1,0 +1,51 @@
+{
+  "name": "Promo Codes",
+  "version": "1.0.0",
+  "description": "Codes promo personnalisables : codes cadeau crédités sur le solde Wallet, bonus de recharge et réductions pour la boutique Orders, avec conditions complètes.",
+  "icon": "Ticket",
+  "author": {
+    "name": "Bloume SAS",
+    "email": "contact@bloume.fr",
+    "url": "https://bloume.fr"
+  },
+  "homepage": "https://github.com/BloumeSAS/UHQ-Addon-PromoCodes",
+  "license": "MIT",
+  "repository": "https://github.com/BloumeSAS/UHQ-Addon-PromoCodes",
+  "translations": {
+    "fr": {
+      "addon.promo.nav": "Mes codes promo",
+      "addon.promo.navAdmin": "Codes promo"
+    },
+    "en": {
+      "addon.promo.nav": "My promo codes",
+      "addon.promo.navAdmin": "Promo codes"
+    }
+  },
+  "pages": [
+    {
+      "path": "/",
+      "label": "addon.promo.nav",
+      "icon": "Ticket",
+      "showInNavbar": false,
+      "adminOnly": false
+    },
+    {
+      "path": "/admin",
+      "label": "addon.promo.navAdmin",
+      "icon": "Ticket",
+      "showInNavbar": true,
+      "adminOnly": true
+    }
+  ],
+  "slots": [],
+  "widgets": [],
+  "auth": {
+    "passJwt": true,
+    "passUserInfo": true
+  },
+  "backup": {
+    "exportEndpoint": "/api/backup/export",
+    "importEndpoint": "/api/backup/import",
+    "authHeader": "X-Panel-Key"
+  }
+}
